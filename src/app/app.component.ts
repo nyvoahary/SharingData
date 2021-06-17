@@ -1,3 +1,4 @@
+import { DataService } from './services/data.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'subject';
+  data = 'subject';
+  constructor(
+    private dataService: DataService
+  ){
+    this.dataService.data.subscribe(message=>this.data = message)
+  }
+  onClick(){
+    this.dataService.newMessage("Message from AppComponent")
+  }
 }

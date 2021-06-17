@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  & > * {
+    width: 48%;
+    min-width: 300px;
+    border: aqua 1px solid;
+    text-align: center;
+  }
+  div:first-child {
+    background-color: rgb(126, 255, 255);
+  }
+}
